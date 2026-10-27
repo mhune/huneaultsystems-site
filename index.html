@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huneault Systems | Operational Diagnostics & Performance Tuning</title>
+  <meta name="description" content="Field instrumentation, root-cause diagnostics, telemetry logging, performance tuning, and control optimization for industrial and electromechanical systems." />
+  
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --heading: #f0f6fc;
+      --accent: #58a6ff;
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 0 6rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 740px;
+      line-height: 1.5;
+    }
+
+    /* Contact Card Section */
+    .contact-banner {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-banner h2 {
+      font-size: 1.15rem;
+      color: var(--heading);
+      margin-bottom: 0;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+    }
+
+    .btn-contact {
+      display: inline-block;
+      color: var(--heading);
+      background: #21262d;
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-contact:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--heading);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+    }
+
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      color: var(--heading);
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      line-height: 1.55;
+    }
+
+    .engagement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .engagement-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .engagement-item h3 {
+      font-size: 1.05rem;
+      color: var(--heading);
+      margin-bottom: 0.4rem;
+    }
+
+    .engagement-item p {
+      margin-bottom: 0;
+      font-size: 0.925rem;
+      color: var(--text-muted);
+    }
+
+    .capabilities-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .capabilities-box ul {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .capabilities-box li {
+      font-size: 0.95rem;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .capabilities-box li::before {
+      content: ">";
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-weight: bold;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+    }
+
+    .contact-links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .location {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-family: var(--font-mono);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .container { padding: 2.5rem 0 4rem; }
+      .contact-banner { flex-direction: column; align-items: flex-start; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="eyebrow">Technical Diagnostics, Tuning & Systems Optimization</div>
+      <h1>Huneault Systems</h1>
+      <p class="hero-subtitle">
+        Bridging the gap between physical machinery, data telemetry, and operational control. Diagnostic troubleshooting, parameter tuning, performance optimization, and custom integration.
+      </p>
+    </header>
+
+    <!-- Contact Section -->
+    <div class="contact-banner">
+      <h2>Contact</h2>
+      <div class="contact-actions">
+        <a href="mailto:mhuneault@huneaultsystems.com" class="btn-contact">mhuneault@huneaultsystems.com</a>
+        <a href="https://linkedin.com/in/MarcAndreHuneault" target="_blank" rel="noopener" class="btn-contact">LinkedIn</a>
+      </div>
+    </div>
+
+    <section>
+      <h2>Approach</h2>
+      <p>
+        Whether physical equipment is struggling with intermittent faults or simply operating below its true capability, the limiting factor is rarely a single component. Most performance ceilings and operational headaches live in the unmonitored interfaces between mechanical loads, electrical components, and software logic.
+      </p>
+      <p>
+        Instead of relying on guesswork or generic factory presets, we extract empirical ground truth: interface with on-machine communication networks, log high-frequency telemetry under actual working conditions, and dial in control parameters and system logic to achieve peak efficiency, stability, and throughput.
+      </p>
+    </section>
+
+    <section>
+      <h2>The Process</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="step-num">01 / AUDIT & INSTRUMENT</div>
+          <h3>Telemetry & Data Capture</h3>
+          <p>
+            Interfacing with fieldbus networks and deploying secondary sensors directly to hardware to capture operational ground truth where standard diagnostics are blind.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">02 / ANALYZE & CHARACTERIZE</div>
+          <h3>System Characterization</h3>
+          <p>
+            Multi-variable data analysis and physical balance checks to cut through noise, isolate root failure modes, and evaluate headroom for throughput and efficiency gains.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">03 / PROTOTYPE & REFINE</div>
+          <h3>Logic & Parameter Design</h3>
+          <p>
+            Developing refined control routines, translation logic, and parameter models to de-risk upgrades and validate performance before touching production assets.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">04 / COMMISSION & OPTIMIZE</div>
+          <h3>Field Tuning & Baseline</h3>
+          <p>
+            Deploying verified software directly to equipment, tuning closed-loop performance live under load, and establishing baseline metrics to sustain high reliability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ways to Work Together</h2>
+      <div class="engagement-list">
+        <div class="engagement-item">
+          <h3>Performance Tuning & Optimization</h3>
+          <p>
+            Fine-tuning control loops, transient response, and parameter profiles on operating equipment to maximize duty cycles, reduce power consumption, and smooth mechanical transitions under real-world load.
+          </p>
+        </div>
+
+        <div class="engagement-item">
+          <h3>Diagnostic & Telemetry Audits</h3>
+          <p>
+            Fixed-scope on-site logging and root-cause analysis for recurring machine faults, nuisance trips, or communication drops. You receive the raw telemetry data and a clear implementation roadmap.
+          </p>
+        </div>
+
+        <div class="engagement-item">
+          <h3>Subsystem Integration & Modernization</h3>
+          <p>
+            Making hardware talk to hardware. Developing custom interface logic to connect third-party controllers, integrate auxiliary sensors, or modernize legacy machine controls.
+          </p>
+        </div>
+
+        <div class="engagement-item">
+          <h3>Full-Cycle Implementation</h3>
+          <p>
+            End-to-end execution of operational improvements, from initial field characterization through software refinement, benchtop validation, and final on-site commissioning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Core Focus</h2>
+      <div class="capabilities-box">
+        <ul>
+          <li>Field Telemetry & Sensor Instrumentation</li>
+          <li>Closed-Loop Control Tuning & State Logic</li>
+          <li>Operational Performance & Efficiency Optimization</li>
+          <li>Condition-Based Monitoring & Diagnostics</li>
+          <li>Root-Cause Failure Analysis</li>
+          <li>Rapid Prototyping & Benchtop Validation</li>
+          <li>Electromechanical Systems Integration</li>
+          <li>Dynamic Load Characterization & Testing</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="location">
+        Lively, Ontario
+      </div>
+      <div class="contact-links">
+        <a href="mailto:mhuneault@huneaultsystems.com">mhuneault@huneaultsystems.com</a>
+        <a href="https://linkedin.com/in/MarcAndreHuneault" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

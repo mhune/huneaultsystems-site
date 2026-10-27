@@ -1,0 +1,49 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Environment & Credentials
+.env
+.env.*
+*.pem
+*.key
+*.cert
+*.id_rsa
+secrets.json
+
+# Logs & Temporary Files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+tmp/
+temp/
+
+# Private Documents & Personal Assets (keep off public repos)
+resume.pdf
+Resume*.pdf
+CV*.pdf
+*Resume*
+*.docx
+*.xlsx
+*.csv
+*.pdf
+# Build outputs (if you ever add a build tool like Vite/Astro)
+dist/
+build/
+node_modules/
