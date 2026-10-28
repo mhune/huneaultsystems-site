@@ -557,29 +557,30 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Core Focus</span>
-          <h2>Services & Approach</h2>
+          <h2>Services</h2>
         </div>
 
         <div class="grid grid-4">
           <!-- Service 1 -->
           <div class="card service-card">
             <div class="card-icon">01</div>
-            <h3>Embedded Systems & Control Architecture</h3>
-            <p>Model-based software development for vehicle control units, auxiliary hydraulics, and mission-critical automation systems.</p>
+            <h3>Embedded Systems & Control</h3>
+            <p>Model-based software development for vehicle control units, industrial PLCs, and mission-critical subsystem automation</p>
             <ul class="card-list">
-              <li>CAN bus network design & J1939 diagnostic stacks</li>
-              <li>Stateflow logic & automated C/C++ code generation</li>
-              <li>Functional safety interlocks & on-site field commissioning</li>
+              <li>Ground-up system design and development</li>
+              <li>Legacy codebase modernization & feature additions</li>
+              <li>Electric drive & actuator performance optimization </li>
+              <li>On-site field commissioning & dynamic tuning</li>
             </ul>
           </div>
 
           <!-- Service 2 -->
           <div class="card service-card">
             <div class="card-icon">02</div>
-            <h3>Process Optimization & Mass Balance</h3>
+            <h3>Process Optimization</h3>
             <p>System-level performance audits for industrial and heavy processing facilities to uncover bottlenecks and increase operational yield.</p>
             <ul class="card-list">
-              <li>End-to-end plant mass balance & throughput modeling</li>
+              <li>End-to-end plant mass balance & dynamic throughput modeling/simulation</li>
               <li>Operational bottleneck identification & cycle-time reduction</li>
               <li>Yield maximization & resource flow diagnostics</li>
             </ul>
@@ -588,12 +589,12 @@
           <!-- Service 3 -->
           <div class="card service-card">
             <div class="card-icon">03</div>
-            <h3>Feasibility Studies & Technical Due Diligence</h3>
-            <p>Rigorous computational and mechanical assessments prior to capital expenditure, fleet electrification, or major re-tooling.</p>
+            <h3>Feasibility Studies</h3>
+            <p>Dynamic modeling and simulation to evaluate performance gains and operational value for machine retrofits, upgrades, or complete overhauls.</p>
             <ul class="card-list">
-              <li>Electrification & hybrid-drive transition evaluations</li>
-              <li>Hardware platform selection & computational overhead analysis</li>
-              <li>Brownfield retrofit risk assessments & ROI modeling</li>
+              <li>Electrification & hybrid-drive duty-cycle simulation</li>
+              <li>Fleet energy demand & battery sizing evaluations</li>
+              <li>Brownfield retrofit analysis</li>
             </ul>
           </div>
 
@@ -601,11 +602,11 @@
           <div class="card service-card">
             <div class="card-icon">04</div>
             <h3>Machine Condition Monitoring & Edge ML</h3>
-            <p>Deploying intelligent edge diagnostics directly onto operational equipment to catch failure modes before catastrophic downtime.</p>
+            <p>Deploying intelligent edge diagnostics onto operational equipment to capture failure modes before catastrophic downtime.</p>
             <ul class="card-list">
-              <li>Vibration time-series analysis & acoustic feature extraction</li>
-              <li>Lightweight ML classification pipelines on embedded targets</li>
-              <li>Predictive maintenance & remote telematics integration</li>
+              <li>Remote telematics integration</li>
+              <li>Anomaly detection, fault classification & predictive maintenance</li></li>
+              <li>Lightweight ML pipelines on embedded targets</li>
             </ul>
           </div>
         </div>
@@ -630,7 +631,7 @@
             <h3>Directional Drilling & Autonomous Steering Logic</h3>
             <p class="project-desc">Architected multi-controller software architecture for specialized industrial drilling machinery operating under deterministic real-time communication constraints.</p>
             <ul class="project-highlights">
-              <li>Built dead-reckoning navigation algorithms, automated centering routines, and dynamic thrust-vector course correction.</li>
+              <li>Dead-reckoning navigation algorithms, automated centering routines, and dynamic thrust-vector course correction.</li>
               <li>Configured high-frequency industrial fieldbus communications for multi-node PLC synchronization.</li>
             </ul>
             <div class="project-tags">
@@ -641,62 +642,72 @@
             </div>
           </div>
 
-          <!-- Item 2: Mobile EV Powertrains -->
           <div class="card project-card">
-            <div class="project-meta">
-              <span class="project-domain">Electric Equipment & Powertrain Integration</span>
-            </div>
-            <h3>Mobile Battery-Electric Powertrains & Traction Control</h3>
-            <p class="project-desc">Modernized vehicle control software across heavy industrial utility fleets to maximize equipment uptime, operational safety, and battery life.</p>
-            <ul class="project-highlights">
-              <li>Implemented inverter torque control algorithms, regenerative braking smoothing, and hill-holder functionality.</li>
-              <li>Integrated DC fast-charging protocols (CCS2) and automated Battery Thermal Management (BTM) loops.</li>
-            </ul>
-            <div class="project-tags">
-              <span class="tag">Torque Control</span>
-              <span class="tag">CAN J1939</span>
-              <span class="tag">CCS2</span>
-              <span class="tag">Battery Thermal Management</span>
-            </div>
+          <div class="project-meta">
+            <span class="project-domain">Heavy Equipment Controls & Powertrains</span>
           </div>
-
+          <h3>Mobile Powertrain & Heavy Subsystem Controls</h3>
+          <p class="project-desc">Control software, state machines, and hardware integration across heavy electric vehicles and high-power auxiliary subsystems.</p>
+          <ul class="project-highlights">
+            <li>Programmed traction drive logic using speed, torque, and current control modes, including hill descent, regen smoothing, and hill-hold routines.</li>
+            <li>Wrote control software for heavy auxiliary equipment, including a 200-tonne winch, 380 hp diesel genset, and hydraulic power packs.</li>
+            <li>Integrated charging and thermal subsystems, including CCS2 fast-charging handshakes, charge controllers, and battery/thermal management units (BTMU/TMU).</li>
+            <li>Implemented auxiliary electric pump controls, tuning dynamic response to prevent pump overspeed during off-load transients and automating start/stop ramp sequences.</li>
+            <li>Developed operator HMI screens, live diagnostic routines, and service-mode override sequences.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">OpenECU M110</span>
+            <span class="tag">Stateflow</span>
+            <span class="tag">Speed, Torque & Current Control</span>
+            <span class="tag">CAN J1939</span>
+            <span class="tag">CCS2 & BTMU/TMU</span>
+            <span class="tag">Heavy Hydraulics & Winches</span>
+          </div>
+        </div>
+          <!-- Item 3: Feasibility & Telemetry -->
           <!-- Item 3: Feasibility & Telemetry -->
           <div class="card project-card">
+            
             <div class="project-meta">
-              <span class="project-domain">Feasibility Studies & Field Telemetry</span>
+              <span class="project-domain">Feasibility & Telemetry Modeling</span>
             </div>
-            <h3>High-Power Hybrid Rigs & Empirical Vehicle Modeling</h3>
-            <p class="project-desc">Directed field logging, sensor instrumentation, and multi-source data analysis on high-power hybrid equipment to determine thermal and physical operational envelopes.</p>
+            <h3>High-Power Hybrid Powertrain Modeling & Field Telemetry</h3>
+            <p class="project-desc">Duty-cycle simulation, sensor instrumentation, and empirical loss modeling to evaluate equipment power demands and validate performance on physical builds.</p>
             <ul class="project-highlights">
-              <li>Synchronized and parsed multi-channel CAN bus feeds with real-time GPS spatial logging.</li>
-              <li>Derived empirical total loss models to establish continuous operational grade and load limits prior to deployment.</li>
+              <li>Developed a dynamic MATLAB vehicle model for a haul truck tramming across GPS-mapped mine road profiles and planned ramps.</li>
+              <li>Modeled dynamic connect/disconnect cycles on HV DC power rails to evaluate on-grade power boost, battery state-of-charge, and required rail lengths.</li>
+              <li>Derived an empirical total loss model from multi-channel CAN telemetry and GPS logging to reconcile theoretical power envelopes against actual as-built hybrid rig performance in the field.</li>
             </ul>
             <div class="project-tags">
-              <span class="tag">Python (NumPy)</span>
-              <span class="tag">Hybrid Powertrains</span>
-              <span class="tag">Field Commissioning</span>
-              <span class="tag">Telemetry Modeling</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">Duty-Cycle Modeling</span>
+              <span class="tag">Empirical Loss Models</span>
+              <span class="tag">HV DC Rail / Trolley</span>
+              <span class="tag">CAN Telemetry</span>
+              <span class="tag">Python</span>
             </div>
           </div>
 
           <!-- Item 4: Auxiliary Electrification & Optimization -->
           <div class="card project-card">
-            <div class="project-meta">
-              <span class="project-domain">Process Optimization & Auxiliary Systems</span>
-            </div>
-            <h3>Commercial Vehicle Auxiliary Electrification</h3>
-            <p class="project-desc">Replaced legacy continuous parasitic hydrostatic systems with on-demand electric auxiliary drive software on heavy commercial platforms.</p>
-            <ul class="project-highlights">
-              <li>Optimized auxiliary power distribution routines to reduce system wear and overall fuel consumption.</li>
-              <li>Implemented automated diagnostic trouble code (DTC) reporting, CAN-based datalogging, and safety interlocks.</li>
-            </ul>
-            <div class="project-tags">
-              <span class="tag">OpenECU M110</span>
-              <span class="tag">Stateflow</span>
-              <span class="tag">Auxiliary Electrification</span>
-              <span class="tag">Diagnostics</span>
-            </div>
+          <div class="project-meta">
+            <span class="project-domain">Control Software & Embedded Integration</span>
           </div>
+          <h3>Commercial Vehicle Auxiliary Pumping Controls</h3>
+          <p class="project-desc">Implemented robust control logic, state machines, and operational safeguards for electric auxiliary pumping systems on commercial platforms.</p>
+          <ul class="project-highlights">
+            <li>Engineered smooth automated start-up, prime, and shutdown sequences to minimize hydraulic and electrical line transients.</li>
+            <li>Developed pre-operational safety routines, including frozen pump detection and mechanical stall prevention.</li>
+            <li>Implemented secure maintenance override sequences ("cheat codes") and diagnostic modes for shop technicians and field calibration.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">OpenECU M110</span>
+            <span class="tag">Stateflow</span>
+            <span class="tag">J1939</span>
+            <span class="tag">Fault Diagnostics</span>
+            <span class="tag">Auxiliary Controls</span>
+          </div>
+        </div>
 
           <!-- Item 5: Master's Research / Condition Monitoring -->
           <div class="card project-card">
